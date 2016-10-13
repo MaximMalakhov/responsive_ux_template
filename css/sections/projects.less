@@ -1,0 +1,39 @@
+.project{
+	position: relative;
+    display: inline-block;
+    width: 288px;
+    height: 288px;
+    margin-left: 12px;
+    cursor: pointer;
+	text-align: center;
+	
+	&:nth-child(4n+1){
+		margin-left: 0;
+	}
+	
+	&:nth-child(n+5){
+		margin-top: 20px;
+	}
+	
+	&:focus .project__replacement, &:hover .project__replacement{
+		display: block;
+	}
+	
+	& .project__inscription{
+		display: block;
+		transform: translate(77%, 0);
+		bottom: 139px;
+		position: absolute;
+	}
+}
+
+.project__replacement{
+    position: absolute;
+    background-color: #0091be;
+    color: #fff;
+	left: 0;
+    top: 0;
+	right: 0;
+    bottom: 0;
+	display: none;
+}
