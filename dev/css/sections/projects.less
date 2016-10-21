@@ -1,0 +1,78 @@
+.project{
+	position: relative;
+    display: inline-block;
+    cursor: pointer;
+	text-align: center;
+	
+	&:focus .project__replacement, &:hover .project__replacement{
+		display: block;
+	}
+	
+	& .project__inscription{
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%,-50%);
+		position: absolute;
+	}
+}
+
+.project__replacement{
+    position: absolute;
+    background-color: #0091be;
+    color: #fff;
+	left: 0;
+    top: 0;
+	right: 0;
+    bottom: 0;
+	display: none;
+}
+
+.project__img{
+	width: 100%;
+	height: auto;
+}
+
+@media screen and (min-width: 921px){
+	.project{
+		width: 23.5%;
+		margin-right: 1.56%;
+		
+		&:nth-child(4n){
+			margin-right: 0;
+		}
+		
+		&:nth-child(n+5){
+			margin-top: 20px;
+		}
+	}
+}
+
+@media screen and (max-width: 920px) and (min-width: 641px){
+	.project{
+		width: 31.5%;
+		margin-right: 2.1%;
+		
+		&:nth-child(3n){
+			margin-right: 0;
+		}
+		
+		&:nth-child(n+4){
+			margin-top: 20px;
+		}
+	}
+}
+
+@media screen and (max-width: 641px){
+	.project{
+		width: 47.5%;
+		margin-right: 3.5%;
+		
+		&:nth-child(2n){
+			margin-right: 0;
+		}
+		
+		&:nth-child(n+3){
+			margin-top: 20px;
+		}
+	}
+}
