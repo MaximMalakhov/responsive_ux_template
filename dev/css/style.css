@@ -24,8 +24,20 @@
   margin: 0;
   padding: 0;
 }
-html {
-  font-size: 10px;
+@media screen and (min-width: 921px) {
+  html {
+    font-size: 10px;
+  }
+}
+@media screen and (max-width: 920px) and (min-width: 641px) {
+  html {
+    font-size: 9px;
+  }
+}
+@media screen and (max-width: 640px) {
+  html {
+    font-size: 8px;
+  }
 }
 body {
   font-family: "Roboto", Arial, sans-serif;
@@ -54,6 +66,7 @@ body {
 }
 .title {
   font-size: 3.5rem;
+  font-weight: normal;
 }
 .section__title {
   margin-bottom: 15px;
@@ -94,9 +107,34 @@ p {
   padding-left: 1rem;
   padding-right: 1rem;
 }
+.page {
+  position: relative;
+  height: 100vh;
+  box-sizing: border-box;
+}
+@media screen and (min-width: 921px) {
+  .page {
+    padding-top: 78px;
+  }
+}
+@media screen and (max-width: 920px) and (min-width: 641px) {
+  .page {
+    padding-top: 71px;
+  }
+}
+@media screen and (max-width: 640px) {
+  .page {
+    padding-top: 127px;
+  }
+}
 .header {
-  padding-top: 15px;
-  padding-bottom: 15px;
+  position: fixed;
+  top: 0;
+  z-index: 999;
+  min-width: 100%;
+  background-color: #fff;
+  padding-top: 1.5rem;
+  padding-bottom: 2rem;
   border-bottom: 5px solid #fad027;
 }
 .logo {
@@ -119,7 +157,7 @@ p {
   }
   .logo__inscription {
     display: block;
-    margin-bottom: 10px;
+    margin-bottom: 3rem;
   }
 }
 .section {
@@ -129,8 +167,17 @@ p {
   padding-bottom: 7rem;
 }
 .section__content {
-  padding-top: 35px;
   border-top: 2px solid #eee;
+}
+@media screen and (min-width: 921px) {
+  .section__content {
+    padding-top: 3.5rem;
+  }
+}
+@media screen and (max-width: 920px) {
+  .section__content {
+    padding-top: 2.5rem;
+  }
 }
 .footer {
   padding-top: 30px;
@@ -276,7 +323,6 @@ p {
 }
 .post__date {
   width: 10%;
-  margin-top: 10px;
   text-align: center;
 }
 .post__day {
@@ -297,9 +343,6 @@ p {
 }
 .post__author {
   float: left;
-}
-.post__tags {
-  float: right;
 }
 .tags__content {
   display: inline-block;
@@ -325,6 +368,9 @@ p {
   padding-left: 1rem;
   padding-right: 1rem;
 }
+.post__tag:nth-child(n+3) {
+  display: none;
+}
 @media screen and (min-width: 921px) {
   .post_addition {
     width: 48%;
@@ -334,26 +380,35 @@ p {
   .post_addition:nth-child(2n+3) {
     margin-left: 3.5%;
   }
-  .post_addition .post__tags {
-    display: none;
+  .post__date {
+    margin-top: 10px;
   }
   .post__content {
     margin-left: 4%;
-  }
-  .post__content {
     width: 85%;
+  }
+  .post__tags {
+    float: right;
   }
 }
 @media screen and (max-width: 920px) {
   .post {
-    margin-bottom: 20px;
+    margin-bottom: 6rem;
+    position: relative;
   }
   .post:last-child {
     margin-bottom: 0;
   }
-  .post__info,
-  .post__date {
+  .post__author {
     display: none;
+  }
+  .post__tags {
+    float: left;
+  }
+  .post__date {
+    position: absolute;
+    top: 0;
+    right: 0;
   }
 }
 /*
@@ -365,23 +420,27 @@ p {
   padding-bottom: 50px;
   text-align: center;
 }
-.benner__inscription {
+.banner__inscription {
   font-size: 4.6rem;
   font-style: italic;
   color: #fff;
 }
+.banner__img {
+  max-width: 100%;
+  height: auto;
+}
 @media screen and (min-width: 921px) {
-  .benner__img,
-  .benner__inscription {
+  .banner__img,
+  .banner__inscription {
     display: inline-block;
     vertical-align: middle;
   }
-  .benner__inscription {
+  .banner__inscription {
     width: 40%;
   }
 }
 @media screen and (max-width: 920px) {
-  .benner__inscription {
+  .banner__inscription {
     display: block;
     width: 100%;
   }
@@ -439,7 +498,7 @@ p {
     margin-right: 0;
   }
   .project:nth-child(n+5) {
-    margin-top: 20px;
+    margin-top: 1.56%;
   }
 }
 @media screen and (max-width: 920px) and (min-width: 641px) {
@@ -451,7 +510,7 @@ p {
     margin-right: 0;
   }
   .project:nth-child(n+4) {
-    margin-top: 20px;
+    margin-top: 2.1%;
   }
 }
 @media screen and (max-width: 641px) {
@@ -463,7 +522,7 @@ p {
     margin-right: 0;
   }
   .project:nth-child(n+3) {
-    margin-top: 20px;
+    margin-top: 3.5%;
   }
 }
 .contacts {

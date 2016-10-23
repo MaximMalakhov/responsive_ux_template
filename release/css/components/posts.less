@@ -20,7 +20,6 @@
 
 .post__date{
 	width: 10%;
-	margin-top: 10px;
 	text-align: center;
 }
 
@@ -45,10 +44,6 @@
 
 .post__author{
 	float: left;
-}
-
-.post__tags{
-	float: right;
 }
 
 .tags__content{
@@ -78,6 +73,11 @@
 	color: #fff;
 	padding-left: 1rem;
 	padding-right: 1rem;
+	
+		
+	&:nth-child(n+3){
+		display: none;
+	}
 }
 
 
@@ -93,31 +93,42 @@
 		}
 	}
 	
-	
-	.post_addition .post__tags{
-		display: none;
+	.post__date{
+		margin-top: 10px;
 	}
 	
 	.post__content{
 		margin-left: 4%;
-	}
-			
-	.post__content{
 		width: 85%;
+	}
+		
+	.post__tags{
+		float: right;
 	}
 }
 
 @media screen and (max-width: 920px){
 
 	.post{
-		margin-bottom: 20px;
+		margin-bottom: 6rem;
+		position: relative;
 		
 		&:last-child{
 			margin-bottom: 0;
 		}
 	}
 	
-	.post__info, .post__date{
+	.post__author{
 		display: none;
+	}
+	
+	.post__tags{
+		float: left;
+	}
+	
+	.post__date{
+		position: absolute;
+		top: 0;
+		right: 0;
 	}
 }
