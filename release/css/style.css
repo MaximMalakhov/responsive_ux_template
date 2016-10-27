@@ -101,7 +101,7 @@ p {
 *������� �������� ������
 */
 .main-container {
-  min-width: 100px;
+  min-width: 300px;
   max-width: 1200px;
   margin: 0 auto;
   padding-left: 1rem;
@@ -112,20 +112,11 @@ p {
   height: 100vh;
   box-sizing: border-box;
 }
-@media screen and (min-width: 921px) {
-  .page {
-    padding-top: 78px;
-  }
-}
-@media screen and (max-width: 920px) and (min-width: 641px) {
-  .page {
-    padding-top: 71px;
-  }
-}
-@media screen and (max-width: 640px) {
-  .page {
-    padding-top: 127px;
-  }
+.banner,
+.section,
+.contacts,
+.footer {
+  min-width: 320px;
 }
 .header {
   position: fixed;
@@ -134,7 +125,6 @@ p {
   min-width: 100%;
   background-color: #fff;
   padding-top: 1.5rem;
-  padding-bottom: 2rem;
   border-bottom: 5px solid #fad027;
 }
 .logo {
@@ -150,10 +140,14 @@ p {
     float: left;
     width: 170px;
   }
+  .header {
+    padding-bottom: 2rem;
+  }
 }
 @media screen and (max-width: 640px) {
   .header {
     text-align: center;
+    padding-bottom: 4.7rem;
   }
   .logo__inscription {
     display: block;
@@ -171,34 +165,38 @@ p {
 }
 @media screen and (min-width: 921px) {
   .section__content {
-    padding-top: 3.5rem;
+    padding-top: 5rem;
   }
 }
 @media screen and (max-width: 920px) {
   .section__content {
-    padding-top: 2.5rem;
+    padding-top: 4rem;
   }
 }
 .footer {
-  padding-top: 30px;
-  padding-bottom: 30px;
   background-color: #3c3838;
   color: #fff;
+  font-size: 1.5rem;
 }
 .developed__link {
   color: #fff;
 }
-@media screen and (min-width: 441px) {
-  .copyright {
-    float: left;
-  }
-  .developed {
-    float: right;
+.copyright {
+  float: left;
+}
+.developed {
+  float: right;
+}
+@media screen and (min-width: 921px) {
+  .footer {
+    padding-top: 30px;
+    padding-bottom: 30px;
   }
 }
-@media screen and (min-width: 440px) {
-  .copyright {
-    margin-bottom: 10px;
+@media screen and (max-width: 920px) {
+  .footer {
+    padding-top: 10px;
+    padding-bottom: 10px;
   }
 }
 /*
@@ -246,6 +244,16 @@ p {
     background-size: cover;
     width: 20px;
     height: 20px;
+    background-color: #fff;
+    border-radius: 50%;
+  }
+  .menu-mobile {
+    background-color: #fad027;
+    width: 100%;
+    position: fixed;
+    top: 60px;
+    right: 0px;
+    padding-top: 8px;
   }
   .icon-about {
     background-image: url("../images/icons/user.svg");
@@ -260,9 +268,6 @@ p {
     background-image: url("../images/icons/email.svg");
   }
 }
-.progress-bar {
-  margin-bottom: 30px;
-}
 .progress-bar:last-child {
   margin-bottom: 0;
 }
@@ -275,6 +280,7 @@ p {
   width: 100%;
   height: 25px;
   background-color: #eee;
+  overflow: hidden;
 }
 .progress-bar__value,
 .progress-bars__content {
@@ -282,6 +288,8 @@ p {
 }
 .progress-bar__value {
   height: 100%;
+  -webkit-animation: progress-bar__value 2s ease-in-out 1 normal;
+  animation: progress-bar__value 2s ease-in-out 1 normal;
 }
 .progress-bar__value_blue {
   width: 90%;
@@ -295,6 +303,26 @@ p {
   width: 95%;
   background-color: #d7d93f;
 }
+@-webkit-keyframes progress-bar__value {
+  0% {
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+  }
+  100% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes progress-bar__value {
+  0% {
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+  }
+  100% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
 @media screen and (min-width: 921px) {
   .about .progress-bars {
     width: 52%;
@@ -302,6 +330,15 @@ p {
   .progress-bars {
     margin-left: 20px;
     display: inline-block;
+    margin-bottom: 30px;
+  }
+  .progress-bar {
+    margin-bottom: 30px;
+  }
+}
+@media screen and (max-width: 920px) {
+  .progress-bar {
+    margin-bottom: 20px;
   }
 }
 .post {
@@ -322,21 +359,14 @@ p {
   vertical-align: top;
 }
 .post__date {
-  width: 10%;
   text-align: center;
 }
 .post__day {
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
-  display: block;
   background-color: #eee;
 }
 .post__month {
-  display: block;
   background-color: #0091be;
   color: #fff;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
 }
 .post_addition .post__info {
   margin-bottom: 15px;
@@ -382,6 +412,7 @@ p {
   }
   .post__date {
     margin-top: 10px;
+    width: 10%;
   }
   .post__content {
     margin-left: 4%;
@@ -390,14 +421,28 @@ p {
   .post__tags {
     float: right;
   }
+  .post__day {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    display: block;
+  }
+  .post__month {
+    display: block;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
 }
 @media screen and (max-width: 920px) {
   .post {
-    margin-bottom: 6rem;
+    margin-bottom: 5rem;
     position: relative;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 2rem;
   }
   .post:last-child {
     margin-bottom: 0;
+    border-bottom: none;
+    padding-bottom: 0;
   }
   .post__author {
     display: none;
@@ -410,14 +455,20 @@ p {
     top: 0;
     right: 0;
   }
+  .post__day {
+    padding: 1rem;
+    float: left;
+  }
+  .post__month {
+    float: left;
+    padding: 1rem;
+  }
 }
 /*
 *������ ��������
 */
 .banner {
   background-color: #0091be;
-  padding-top: 50px;
-  padding-bottom: 50px;
   text-align: center;
 }
 .banner__inscription {
@@ -427,7 +478,6 @@ p {
 }
 .banner__img {
   max-width: 100%;
-  height: auto;
 }
 @media screen and (min-width: 921px) {
   .banner__img,
@@ -438,16 +488,32 @@ p {
   .banner__inscription {
     width: 40%;
   }
+  .banner__img {
+    height: auto;
+  }
 }
 @media screen and (max-width: 920px) {
   .banner__inscription {
     display: block;
     width: 100%;
+    margin-top: 20px;
+  }
+}
+@media screen and (min-width: 641px) {
+  .banner {
+    padding-top: 14rem;
+    padding-bottom: 5rem;
   }
 }
 @media screen and (max-width: 640px) {
   .banner {
-    height: 100vh;
+    box-sizing: border-box;
+    padding-top: 19rem;
+    padding-bottom: 3rem;
+    min-height: 100vh;
+  }
+  .banner__img {
+    height: 250px;
   }
 }
 @media screen and (min-width: 921px) {
@@ -460,7 +526,7 @@ p {
 @media screen and (max-width: 920px) {
   .about__info {
     width: 100%;
-    margin-bottom: 20px;
+    margin-bottom: 50px;
   }
 }
 .project {
@@ -476,6 +542,7 @@ p {
 .project .project__inscription {
   top: 50%;
   left: 50%;
+  -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   position: absolute;
 }

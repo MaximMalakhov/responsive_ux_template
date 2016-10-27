@@ -1,7 +1,5 @@
 .banner{
 	background-color: #0091be;
-	padding-top: 50px;
-	padding-bottom: 50px;
 	text-align: center;
 }
 
@@ -13,7 +11,6 @@
 
 .banner__img{
 	max-width: 100%;
-	height: auto;
 }
 
 @media screen and (min-width: 921px){
@@ -26,6 +23,10 @@
 	.banner__inscription{
 		width: 40%;
 	}
+	
+	.banner__img{
+		height: auto;
+	}
 }
 
 @media screen and (max-width: 920px){
@@ -33,12 +34,28 @@
 	.banner__inscription{
 		display: block;
 		width: 100%;
+		margin-top: 20px;
+	}
+}
+
+@media screen and (min-width: 641px){
+
+	.banner{
+		padding-top: 14rem;
+		padding-bottom: 5rem;
 	}
 }
 
 @media screen and (max-width: 640px){
 
 	.banner{
-		height: 100vh;
+		box-sizing: border-box;
+		padding-top: 19rem;
+		padding-bottom: 3rem;
+		min-height: 100vh;
+	}
+	
+	.banner__img{
+		height: 250px;
 	}
 }

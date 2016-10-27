@@ -1,5 +1,4 @@
 .progress-bar{
-	margin-bottom: 30px;
 	
 	&:last-child{
 		margin-bottom: 0;
@@ -16,6 +15,7 @@
 	width: 100%;
 	height: 25px;
 	background-color: #eee;
+	overflow: hidden;
 }
 
 .progress-bar__value, .progress-bars__content{
@@ -24,6 +24,7 @@
 
 .progress-bar__value{
 	height: 100%;
+	animation: progress-bar__value 2s ease-in-out 1 normal; 
 }
 
 .progress-bar__value_blue{
@@ -41,6 +42,17 @@
 	background-color: #d7d93f;
 }
 
+
+@keyframes progress-bar__value{
+	0%{
+		transform: translate3d(-100%, 0, 0);
+	}
+	
+   100%{
+     transform: translate3d(0, 0, 0);
+   }
+}
+
 @media screen and (min-width: 921px){
 
 	.about .progress-bars{
@@ -50,5 +62,17 @@
 	.progress-bars{
 		margin-left: 20px;
 		display: inline-block;
+		margin-bottom: 30px;
+	}
+	
+	.progress-bar{
+		margin-bottom: 30px;
+	}
+}
+
+@media screen and (max-width: 920px){
+	
+	.progress-bar{
+		margin-bottom: 20px;
 	}
 }
