@@ -35,10 +35,15 @@
 	.menu-mobile-list__item{
 		margin-right: 10%;
 		display: inline-block;
+		width: 10%;
 		
 		&:last-child{
 			margin-right: 0;
 		}
+	}
+	
+	.menu-mobile-list__item a{
+		display: inline-block;
 	}
 	
 	.menu-mobile__name{
@@ -58,12 +63,16 @@
 	.menu-mobile{
 		background-color: #fad027;
 		width: 100%;
-		position: fixed;
-		top: 60px;
-		right: 0px;
 		padding-top: 8px;
+		padding-bottom: 8px;
+		z-index: 9;
 	}
-	
+	/*id для плавного скрола*/
+	#stickyalias {
+	  display: none;
+	  height: 55px;
+	}
+				
 	.icon-about{
 		.path("icons/user.svg");
 	}

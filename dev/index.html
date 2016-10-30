@@ -20,35 +20,36 @@
 					<li class="menu-list__item"><a href="#map" class="link link_black">Contacts</a></li>
 				</ul>
 			</nav>
-			<nav class="menu-mobile">
-				<ul class="menu-mobile-list">
-					<li class="menu-mobile-list__item">
-						<a href="#about" class="link link_black">
-							<i class="icon menu-mobile__icon icon-about"></i>
-							<span class="menu-mobile__name">About</span>
-						</a>
-					</li>
-					<li class="menu-mobile-list__item">
-						<a href="#project" class="link link_black">
-							<i class="icon menu-mobile__icon icon-project"></i>
-							<span class="menu-mobile__name">Projects</span>
-						</a>
-					</li>
-					<li class="menu-mobile-list__item">
-						<a href="#blog" class="link link_black">
-							<i class="icon menu-mobile__icon icon-blog"></i>
-							<span class="menu-mobile__name">Blog</span>
-						</a>
-					</li>
-					<li class="menu-mobile-list__item">
-						<a href="#map" class="link link_black">
-							<i class="icon menu-mobile__icon icon-contacts"></i>
-							<span class="menu-mobile__name">Contacts</span>
-						</a>
-					</li>
-				</ul>
-			</nav>
 		</div>
+		<nav id="menu-mobile" class="menu-mobile">
+			<ul class="menu-mobile-list">
+				<li class="menu-mobile-list__item">
+					<a href="#about" class="link link_black">
+						<i class="icon menu-mobile__icon icon-about"></i>
+						<span class="menu-mobile__name">About</span>
+					</a>
+				</li>
+				<li class="menu-mobile-list__item">
+					<a href="#project" class="link link_black">
+						<i class="icon menu-mobile__icon icon-project"></i>
+						<span class="menu-mobile__name">Projects</span>
+					</a>
+				</li>
+				<li class="menu-mobile-list__item">
+					<a href="#blog" class="link link_black">
+						<i class="icon menu-mobile__icon icon-blog"></i>
+						<span class="menu-mobile__name">Blog</span>
+					</a>
+				</li>
+				<li class="menu-mobile-list__item">
+					<a href="#map" class="link link_black">
+						<i class="icon menu-mobile__icon icon-contacts"></i>
+						<span class="menu-mobile__name">Contacts</span>
+					</a>
+				</li>
+			</ul>
+		</nav>
+	<div id="stickyalias"></div>
 	</header>
 	<div class="banner">
 		<div class="main-container">
@@ -291,7 +292,7 @@
 			</div>
 		</div>
 	</footer>
-	<div class="preloader">
+	<div id="preloader" class="preloader">
 		<div class="preloader__items">
 			<div class="preloader__item preloader_1"></div>
 			<div class="preloader__item preloader_2"></div>
@@ -304,8 +305,7 @@
 		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAH0RtyCUB0sGLtwdFZMvdAHleiG7fXJ6Q&callback=initMap">
 	</script>
 	<script type='text/javascript' src="js/preloader.js"></script>
-	<script type="text/javascript">
-		setTimeout(function(){$('.preloader').fadeOut('fast')},5000);
-	</script>
+	<script type='text/javascript' src="js/jquery-min.js"></script>
+	<script type='text/javascript' src="js/menu.js"></script>
 </body>
 </html>

@@ -6,7 +6,7 @@
 	overflow: hidden;
 	
 	&:focus .project__replacement, &:hover .project__replacement{
-		transform: translate3d(0,100%,0);
+		transform: translate3d(0,0,0);
 	}
 	
 	& .project__inscription{
@@ -24,8 +24,9 @@
 	width: 100%;
 	height: 100%;
     left: 0;
-    top: -100%;
+    top: 0;
 	transition: transform 1s ease-in-out;
+	transform: translate3d(0,-100%,0);
 }
 
 
@@ -44,7 +45,7 @@
 		}
 		
 		&:nth-child(n+5){
-			margin-top: 1.56%;
+			margin-top: 1.2vw;
 		}
 	}
 }
@@ -59,7 +60,7 @@
 		}
 		
 		&:nth-child(n+4){
-			margin-top: 2.1%;
+			margin-top: 2.04vw;
 		}
 	}
 }
@@ -74,7 +75,7 @@
 		}
 		
 		&:nth-child(n+3){
-			margin-top: 3.5%;
+			margin-top: 3.34vw;
 		}
 	}
 }
