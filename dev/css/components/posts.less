@@ -1,5 +1,7 @@
 .post{
 	vertical-align: top;
+	display: flex;
+	flex-direction: column;
 }
 
 .post__img{
@@ -33,10 +35,6 @@
 
 .post_addition .post__info{
 	margin-bottom: 15px;
-}
-
-.post__author{
-	float: left;
 }
 
 .tags__content{
@@ -73,8 +71,13 @@
 	}
 }
 
-
 @media screen and (min-width: 921px){
+	
+	.post__info_align-space-between{
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
 	
 	.post_addition{
 		width: 48%;
@@ -96,10 +99,6 @@
 		width: 85%;
 	}
 		
-	.post__tags{
-		float: right;
-	}
-	
 	.post__day{
 		padding-top: 1.5rem;
 		padding-bottom: 1.5rem;
@@ -131,24 +130,29 @@
 	.post__author{
 		display: none;
 	}
-	
-	.post__tags{
-		float: left;
-	}
-	
+
 	.post__date{
 		position: absolute;
 		top: 0;
 		right: 0;
+		font-size: 1.3rem;
 	}
 	
 	.post__day{
 		padding: 0.5rem 1rem;
-		float: left;
 	}
 
 	.post__month{
-		float: left;
 		padding: 0.5rem 2rem;
+	}
+	
+	.post__date_align-flex-end{
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+	}
+	
+	.post__info{
+	    order: 1;
 	}
 }
