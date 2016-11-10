@@ -5,9 +5,9 @@ var gulp = require('gulp'),
 	autoprefixer = require('gulp-autoprefixer');
 
 gulp.task('minify-css', function() {
-	return gulp.src('css/style.css')
+	return gulp.src('dev/css/style.css')
     .pipe(cleanCSS({compatibility: 'ie8'}))
-    .pipe(gulp.dest('css'));
+    .pipe(gulp.dest('dev/css'));
 });
 
 /*автопрефиксер css*/
