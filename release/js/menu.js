@@ -1,5 +1,6 @@
+/*функция для плавного перемещения меню при скроле*/
+
 $(function(){
-        // Check the initial Poistion of the Sticky Header
         var stickyHeaderTop = $('.menu-mobile').offset().top;
  
         $(window).scroll(function(){
